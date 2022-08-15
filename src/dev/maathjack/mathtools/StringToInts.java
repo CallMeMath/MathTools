@@ -20,7 +20,7 @@ public class StringToInts {
         return length;
     }
 
-    public static boolean isValid(String input, boolean extended) {
+    public static boolean isAValidNumber(String input, boolean extended) {
         boolean validity = true;
         for(int i = 0; i < input.length(); i++) {
             if(charIsBad(input.charAt(i), extended)) {

@@ -13,7 +13,7 @@ public class PythagoreanTriplets {
         Scanner scanner = new Scanner(System.in);
         System.out.print("\nHow long should the cathetus be at most? ");
         String input = scanner.next();
-        if(StringToInts.isValid(input, false)) {
+        if(StringToInts.isAValidNumber(input, false)) {
             int maxCath = Integer.parseInt(input.replaceAll(" ", ""));
             int[][] list = new int[maxCath*maxCath][3];
             for(int a = 1; a <= maxCath; a++) {

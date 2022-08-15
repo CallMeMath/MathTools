@@ -14,7 +14,7 @@ public class GCDandLCM {
         System.out.println("\nPlease enter your numbers separated by a comma");
         System.out.println("Ex. 4, 17, 10, 35");
         String input = scanner.nextLine();
-        if(StringToInts.isValid(input, true)) {
+        if(StringToInts.isAValidNumber(input, true)) {
             System.out.println("\nCalculating...");
             int[] intList = StringToInts.intList(input);
             int[][][] factorisationList = factor(intList);
