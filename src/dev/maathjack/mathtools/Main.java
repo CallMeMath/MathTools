@@ -3,13 +3,49 @@ package src.dev.maathjack.mathtools;
 import java.util.Scanner;
 
 public class Main {
-    public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
+    public static void main(String[] args) throws InterruptedException{
         System.out.println("Welcome to Math Tools - Made by Math and Jack");
-        System.out.println("select option");
+        Thread.sleep(2000);
+        run();
+    }
+
+    public static void run() throws InterruptedException{
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("\nPlease select your option:");
         System.out.println("[1] Pythagorean Triplets Generator");
         System.out.println("[2] GCD and LCM calculator");
+        System.out.println("[3] Credits");
+        System.out.println("[4] Quit");
         System.out.print("Please enter your choice: ");
-        int choice = scanner.nextInt();
+        String input = scanner.next();
+        if(StringToInts.isValid(input, false)) {
+            int choice = Integer.parseInt(input.replaceAll(" ", ""));
+            switch (choice) {
+                case 1 -> PythagoreanTriplets.launch();
+                case 2 -> GCDandLCM.launch();
+                case 3 -> credits();
+                case 4 -> quit();
+                default -> {
+                    System.out.println("\nPlease enter a valid choice");
+                    Thread.sleep(2000);
+                    run();
+                }
+            }
+        }
+        else {
+            System.out.println("\nPlease enter a valid choice");
+            Thread.sleep(2000);
+            run();
+        }
+    }
+
+    public static void credits() {
+        System.out.println("sto cazzo");
+    }
+
+    public static void quit() throws InterruptedException {
+        System.out.println("\nThank you for using Math Tools");
+        Thread.sleep(3000);
+        System.exit(0);
     }
 }
