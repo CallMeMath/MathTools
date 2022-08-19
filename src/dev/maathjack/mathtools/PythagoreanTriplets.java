@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class PythagoreanTriplets {
     public static void launch() throws InterruptedException {
-        System.out.println("\nPythagorean Triplets Generator - Made By Jack");
+        System.out.println("\nPythagorean Triplets Generator");
         Thread.sleep(2000);
         run();
     }
@@ -13,7 +13,7 @@ public class PythagoreanTriplets {
         Scanner scanner = new Scanner(System.in);
         System.out.print("\nHow long should the cathetus be at most? ");
         String input = scanner.next();
-        if(StringToInts.isAValidNumber(input, false)) {
+        if(StringToInts.isAValidNumber(input, 0)) {
             int maxCath = Integer.parseInt(input.replaceAll(" ", ""));
             int[][] list = new int[maxCath*maxCath][3];
             for(int a = 1; a <= maxCath; a++) {

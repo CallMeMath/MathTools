@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class DateToWeekday {
     public static void launch() throws InterruptedException{
-        System.out.println("\nWelcome to Date To Weekday - Made by Jack");
+        System.out.println("\nDate To Weekday");
         Thread.sleep(2000);
         run();
     }
@@ -58,7 +58,7 @@ public class DateToWeekday {
     }
 
     public static boolean inputDateIsValid(String[] input) {
-        boolean isValid = (input.length == 3 && StringToInts.isAValidNumber(input[0], false) && StringToInts.isAValidNumber(input[1], false) && StringToInts.isAValidNumber(input[2], false));
+        boolean isValid = (input.length == 3 && StringToInts.isAValidNumber(input[0], 0) && StringToInts.isAValidNumber(input[1], 0) && StringToInts.isAValidNumber(input[2], 0));
         int[] values = new int[3];
         if(isValid) {
             values[0] = Integer.parseInt(input[0]);

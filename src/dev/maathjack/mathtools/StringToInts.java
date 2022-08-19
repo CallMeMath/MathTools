@@ -20,10 +20,10 @@ public class StringToInts {
         return length;
     }
 
-    public static boolean isAValidNumber(String input, boolean extended) {
+    public static boolean isAValidNumber(String input, int type) {
         boolean validity = true;
         for(int i = 0; i < input.length(); i++) {
-            if(charIsBad(input.charAt(i), extended)) {
+            if(charIsBad(input, input.charAt(i), type)) {
                 validity = false;
                 break;
             }
@@ -31,7 +31,17 @@ public class StringToInts {
         return validity;
     }
 
-    public static boolean charIsBad(char c, boolean extended) {
-        return !(c == '0' || c == '1' || c == '2' || c == '3' || c == '4' || c == '5' || c == '6' || c == '7' || c == '8' || c == '9' || c == ' ' || (c == ',' && extended));
+    public static boolean charIsBad(String input, char c, int type) {
+        return !(c == '0' || c == '1' || c == '2' || c == '3' || c == '4' || c == '5' || c == '6' || c == '7' || c == '8' || c == '9' || c == ' ' || (c == ',' && (type == 1)) || (c == '.' && (type == 2 && exactlyOnePoint(input))));
+    }
+
+    public static boolean exactlyOnePoint(String input) {
+        int count = 0;
+        for(int i = 0; i < input.length(); i++) {
+            if(input.charAt(i) == '.') {
+                count++;
+            }
+        }
+        return (count == 1);
     }
 }
